@@ -11,8 +11,10 @@ class BottomNavigationBarDemo extends StatefulWidget{
 
 class _BottomNavigationBarDemoState extends State<BottomNavigationBarDemo> {
   int _currentIndex = 0;
-  void _inTopHandler () {
-
+  void _inTopHandler (int index) {
+    this.setState(() {
+      _currentIndex = index;
+    });
   }
 
   @override
@@ -21,10 +23,11 @@ class _BottomNavigationBarDemoState extends State<BottomNavigationBarDemo> {
     return BottomNavigationBar(
       currentIndex: _currentIndex,
       type: BottomNavigationBarType.fixed,
+      onTap:  _inTopHandler,
       items: [
         BottomNavigationBarItem(
           icon: Icon(Icons.explore),
-          title: Text('Explore')
+          title: Text('Explore'),
         ),
         BottomNavigationBarItem(
           icon: Icon(Icons.history),
