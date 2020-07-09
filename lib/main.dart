@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import './demo/listview_demo.dart';
 import './demo/bottom_navigation_bar_demo.dart';
+import './demo/basic_demo.dart';
 void main ()=> runApp(App());
 
 
@@ -60,7 +61,8 @@ class Home extends StatelessWidget{
           children: <Widget>[
             // Icon(Icons.local_florist, size: 128.0,color: Colors.black26),
             ListViewDemo(),
-            Icon(Icons.change_history),
+            // Icon(Icons.change_history),
+            BasicDemo(),
             Icon(Icons.directions_bike)
           ],
         ),
