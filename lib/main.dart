@@ -7,6 +7,7 @@ import './demo/view_demo.dart';
 import './demo/sliver_demo.dart';
 import './demo/navigator_demo.dart';
 import './demo/form_demo.dart';
+import './demo/material_components.dart';
 
 void main ()=> runApp(App());
 
@@ -23,7 +24,8 @@ class App extends StatelessWidget{
       routes: {
         '/': (context) => NavigatorDemo(),
         '/about': (context) => Pages(title: 'about'),
-        '/form': (context) => FromDemo()
+        '/form': (context) => FromDemo(),
+        '/mdc': (context) => MaterialComponentDemo()
       },
       theme: ThemeData(
         primarySwatch: Colors.yellow,
