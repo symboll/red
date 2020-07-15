@@ -5,6 +5,9 @@ import './popup_menu_button_demo.dart';
 import 'form/form_demo.dart';
 import 'form/checkbox_demo.dart';
 import 'form/radio_demo.dart';
+import 'form/switch_demo.dart';
+import 'form/slider_demo.dart';
+import 'form/date_time_deme.dart';
 
 class MaterialComponentDemo extends StatelessWidget {
   @override
@@ -39,6 +42,18 @@ class MaterialComponentDemo extends StatelessWidget {
           ListItem(
             title: 'RadioDemo',
             page: RadioDemo(),
+          ),
+          ListItem(
+            title: 'SwitchDemo',
+            page: SwitchDemo(),
+          ),
+          ListItem(
+            title: 'SliderDemo',
+            page: SliderDemo(),
+          ),
+          ListItem(
+            title: 'DateTimeDemo',
+            page: DateTimeDemo(),
           )
         ],
       ),
