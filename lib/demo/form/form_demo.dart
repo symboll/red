@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 
-class FromDemo extends StatelessWidget {
+class FormDemo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        title: Text('Form Demo'),
+        elevation: 0.0,
+      ),
       body: Theme(
         data: Theme.of(context).copyWith(
           primaryColor: Colors.black,

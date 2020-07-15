@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import './button_demo.dart';
 import './floating_action_button_demo.dart';
 import './popup_menu_button_demo.dart';
-
+import 'form/form_demo.dart';
+import 'form/checkbox_demo.dart';
+import 'form/radio_demo.dart';
 
 class MaterialComponentDemo extends StatelessWidget {
   @override
@@ -25,6 +27,18 @@ class MaterialComponentDemo extends StatelessWidget {
           ListItem(
             title: 'PopupMenu',
             page: PopupMenuButtonDemo()
+          ),
+          ListItem(
+            title: 'Form',
+            page: FormDemo()
+          ),
+          ListItem(
+            title: 'CheckBoxDemo',
+            page: CheckBoxDemo(),
+          ),
+          ListItem(
+            title: 'RadioDemo',
+            page: RadioDemo(),
           )
         ],
       ),
