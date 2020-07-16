@@ -8,6 +8,11 @@ import 'form/radio_demo.dart';
 import 'form/switch_demo.dart';
 import 'form/slider_demo.dart';
 import 'form/date_time_deme.dart';
+import 'dialog/simple_dialog_demo.dart';
+import 'dialog/alert_dialog_demo.dart';
+import 'bottom_sheet_demo.dart';
+import 'snack_bar_demo.dart';
+import 'expansion_panel_demo.dart';
 
 class MaterialComponentDemo extends StatelessWidget {
   @override
@@ -19,6 +24,18 @@ class MaterialComponentDemo extends StatelessWidget {
       ),
       body: ListView(
         children: <Widget>[
+          ListItem(
+            title: 'ExpansionPanelDemo',
+            page: ExpansionPanelDemo(),
+          ),
+          ListItem(
+            title: 'SnackBarDemo',
+            page: SnackBarDemo(),
+          ),
+          ListItem(
+            title: 'BottomSheetDemo',
+            page: BottomSheetDemo(),
+          ),
           ListItem(
             title: 'FloatingActionButton',
             page: FloatingActionButtonDemo(),
@@ -54,7 +71,15 @@ class MaterialComponentDemo extends StatelessWidget {
           ListItem(
             title: 'DateTimeDemo',
             page: DateTimeDemo(),
-          )
+          ),
+          ListItem(
+            title: 'SimpleDialog',
+            page: SimpleDialogDemo(),
+          ),
+          ListItem(
+            title: 'AlertDialogDemo',
+            page: AlertDialogDemo(),
+          ),
         ],
       ),
     );
