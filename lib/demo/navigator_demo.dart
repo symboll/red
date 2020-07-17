@@ -8,11 +8,13 @@ class NavigatorDemo extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.grey[100],
       body: Center(
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
+        child: Wrap(
+          // mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             FlatButton(
-              onPressed: null,
+              onPressed: () {
+                Navigator.pushNamed(context, '/about');
+              },
               child: Text('Home')
             ),
             FlatButton(
@@ -28,26 +30,22 @@ class NavigatorDemo extends StatelessWidget {
             ),
             FlatButton(
               onPressed: () {
-                // Navigator.of(context).push(
-                //   MaterialPageRoute(
-                //     builder: (BuildContext context) => Pages(title: 'About')
-                //   )
-                // );
                 Navigator.pushNamed(context, '/form');
               },
               child: Text('Form')
             ),
             FlatButton(
               onPressed: () {
-                // Navigator.of(context).push(
-                //   MaterialPageRoute(
-                //     builder: (BuildContext context) => Pages(title: 'About')
-                //   )
-                // );
                 Navigator.pushNamed(context, '/mdc');
               },
               child: Text('Material')
-            )
+            ),
+            FlatButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/stateManagement');
+              },
+              child: Text('StateManagement')
+            ),
           ],
         ),
       )

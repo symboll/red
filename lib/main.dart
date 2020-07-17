@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:red/demo/state/state_management_demo.dart';
 import './demo/listview_demo.dart';
 import './demo/bottom_navigation_bar_demo.dart';
 import './demo/basic_demo.dart';
@@ -8,6 +9,9 @@ import './demo/sliver_demo.dart';
 import './demo/navigator_demo.dart';
 import 'demo/form/form_demo.dart';
 import './demo/material_components.dart';
+import './demo/state/state_management_demo.dart';
+import './demo/state/inherited_demo.dart';
+import 'demo/state/scoped_model_demo.dart';
 
 void main ()=> runApp(App());
 
@@ -23,9 +27,13 @@ class App extends StatelessWidget{
       initialRoute: '/',
       routes: {
         '/': (context) => NavigatorDemo(),
+        '/home':(context) => Home(),
         '/about': (context) => Pages(title: 'about'),
         '/form': (context) => FormDemo(),
-        '/mdc': (context) => MaterialComponentDemo()
+        '/mdc': (context) => MaterialComponentDemo(),
+        // '/StateManagement': (context) => StateManagementDemo()
+        // '/stateManagement': (context) => InheritedDemo()
+        '/stateManagement': (context) => ScopedModelDemo()
       },
       theme: ThemeData(
         primarySwatch: Colors.yellow,
@@ -55,10 +63,10 @@ class Home extends StatelessWidget{
           title: Text('Flutter App'),
           actions: <Widget>[
             IconButton(
-            icon: Icon(Icons.search),
-            tooltip: 'Search',
-            onPressed: ()=> debugPrint('search Button on Pressed'),
-          ),
+              icon: Icon(Icons.search),
+              tooltip: 'Search',
+              onPressed: ()=> debugPrint('search Button on Pressed'),
+            ),
           ],
           elevation: 0.0,
           bottom: TabBar(
@@ -73,6 +81,12 @@ class Home extends StatelessWidget{
               Tab(icon: Icon(Icons.sd_card))
             ],
           ),
+        ),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          child: Icon(Icons.arrow_forward_ios),
         ),
         body: TabBarView(
           children: <Widget>[
