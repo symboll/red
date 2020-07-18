@@ -13,6 +13,7 @@ import './demo/state/state_management_demo.dart';
 import './demo/state/inherited_demo.dart';
 import 'demo/state/scoped_model_demo.dart';
 import 'demo/stream/stream_demo.dart';
+import 'demo/stream/stream_test.dart';
 
 void main ()=> runApp(App());
 
@@ -36,6 +37,7 @@ class App extends StatelessWidget{
         // '/stateManagement': (context) => InheritedDemo()
         '/stateManagement': (context) => ScopedModelDemo(),
         '/stream': (context) => StreamDemo(),
+        '/streamTest': (context) => StreamTestDemo()
 
       },
       theme: ThemeData(

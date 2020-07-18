@@ -26,13 +26,14 @@ class _StreamDemoHomeState extends State<StreamDemoHome> {
   // Stream<String> _streamDemo;
   StreamController<String> _streamController;
   StreamSink _streamSink;
-  String _data = '...';
+  // String _data = '...';
 
   @override
   void dispose() {
     // TODO: implement dispose
     _streamController.close();
     super.dispose();
+    
   }
   @override
   void initState() {
@@ -45,16 +46,16 @@ class _StreamDemoHomeState extends State<StreamDemoHome> {
     _streamSink = _streamController.sink;
 
     print('Start listening on a stream');
-    _streamSubscription =
-      // _streamDemo.listen(onData,onError: onError, onDone: onDone);
-      _streamController.stream.listen(onData,onError: onError, onDone: onDone);
+    // _streamSubscription =
+    //   // _streamDemo.listen(onData,onError: onError, onDone: onDone);
+    //   _streamController.stream.listen(onData,onError: onError, onDone: onDone);
 
     print('Initialize completed');
   }
   void onData (String data) {
-    setState(() {
-      _data = data;
-    });
+    // setState(() {
+    //   _data = data;
+    // });
     print('${data}');
   }
   void onError (error) { print('Error: ${error}');}
