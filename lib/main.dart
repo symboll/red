@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:red/demo/state/state_management_demo.dart';
-import './demo/listview_demo.dart';
-import './demo/bottom_navigation_bar_demo.dart';
-import './demo/basic_demo.dart';
-import './demo/layout_demo.dart';
-import './demo/view_demo.dart';
-import './demo/sliver_demo.dart';
-import './demo/navigator_demo.dart';
+import 'demo/listview_demo.dart';
+import 'demo/bottom_navigation_bar_demo.dart';
+import 'demo/basic_demo.dart';
+import 'demo/layout_demo.dart';
+import 'demo/view_demo.dart';
+import 'demo/sliver_demo.dart';
+import 'demo/navigator_demo.dart';
 import 'demo/form/form_demo.dart';
-import './demo/material_components.dart';
-import './demo/state/state_management_demo.dart';
-import './demo/state/inherited_demo.dart';
+import 'demo/material_components.dart';
+import 'demo/state/state_management_demo.dart';
+import 'demo/state/inherited_demo.dart';
 import 'demo/state/scoped_model_demo.dart';
 import 'demo/stream/stream_demo.dart';
 import 'demo/stream/stream_test.dart';
+import 'demo/rxdart/rxdart_demo.dart';
 
 void main ()=> runApp(App());
 
@@ -37,7 +37,8 @@ class App extends StatelessWidget{
         // '/stateManagement': (context) => InheritedDemo()
         '/stateManagement': (context) => ScopedModelDemo(),
         '/stream': (context) => StreamDemo(),
-        '/streamTest': (context) => StreamTestDemo()
+        '/streamTest': (context) => StreamTestDemo(),
+        '/rxdart': (context) => RxDartDemo()
 
       },
       theme: ThemeData(
