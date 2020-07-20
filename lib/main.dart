@@ -14,6 +14,7 @@ import 'demo/state/scoped_model_demo.dart';
 import 'demo/stream/stream_demo.dart';
 import 'demo/stream/stream_test.dart';
 import 'demo/rxdart/rxdart_demo.dart';
+import 'demo/bloc/bloc_demo.dart';
 
 void main ()=> runApp(App());
 
@@ -38,7 +39,9 @@ class App extends StatelessWidget{
         '/stateManagement': (context) => ScopedModelDemo(),
         '/stream': (context) => StreamDemo(),
         '/streamTest': (context) => StreamTestDemo(),
-        '/rxdart': (context) => RxDartDemo()
+        '/rxdart': (context) => RxDartDemo(),
+        '/bloc': (context) => BlocDemo(),
+
 
       },
       theme: ThemeData(
