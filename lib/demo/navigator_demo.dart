@@ -70,6 +70,12 @@ class NavigatorDemo extends StatelessWidget {
               },
               child: Text('Http')
             ),
+            FlatButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/animation');
+              },
+              child: Text('Animation')
+            ),
           ],
         ),
       )
