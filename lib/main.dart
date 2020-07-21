@@ -15,6 +15,7 @@ import 'demo/stream/stream_demo.dart';
 import 'demo/stream/stream_test.dart';
 import 'demo/rxdart/rxdart_demo.dart';
 import 'demo/bloc/bloc_demo.dart';
+import 'demo/http/http_demo.dart';
 
 void main ()=> runApp(App());
 
@@ -41,6 +42,7 @@ class App extends StatelessWidget{
         '/streamTest': (context) => StreamTestDemo(),
         '/rxdart': (context) => RxDartDemo(),
         '/bloc': (context) => BlocDemo(),
+        '/http': (context) => HttpDemo(),
 
 
       },
