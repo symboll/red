@@ -1,4 +1,4 @@
-package com.example.red
+package com.example.nongfu_spring
 
 import androidx.annotation.NonNull;
 import io.flutter.embedding.android.FlutterActivity
