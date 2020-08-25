@@ -1,4 +1,4 @@
-package com.example.nongfu_spring
+package com.example.smile_spring_breeze
 
 import androidx.annotation.NonNull;
 import io.flutter.embedding.android.FlutterActivity
