@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
-void main ()=> runApp(App());
+import 'pages/home_page.dart';
+
+void main () => runApp(App());
 
 
 class App extends StatelessWidget{
@@ -8,20 +10,16 @@ class App extends StatelessWidget{
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Home(),
+      initialRoute: '/',
+      routes:  {
+        '/':  (context) => HomePage(),
+      },
+      theme: ThemeData(
+        primaryColor: Colors.amberAccent[700]
+      ),
     );
   }
 } 
 
 
-class Home extends StatelessWidget{
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('init'),
-        elevation: 0.0,
-      ),
-    );
-  }
-}
+
