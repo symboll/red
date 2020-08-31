@@ -1,4 +1,4 @@
-package com.example.smile_in_vernal_breeze
+package com.example.jd_app
 
 import androidx.annotation.NonNull;
 import io.flutter.embedding.android.FlutterActivity
