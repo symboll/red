@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'pages/home_page.dart';
+import 'pages/index_page.dart';
 
 void main () => runApp(App());
 
@@ -12,10 +12,10 @@ class App extends StatelessWidget{
       debugShowCheckedModeBanner: false,
       initialRoute: '/',
       routes:  {
-        '/':  (context) => HomePage(),
+        '/':  (context) => IndexPage(),
       },
       theme: ThemeData(
-        primaryColor: Colors.amberAccent[700]
+        primaryColor: Colors.red[600]
       ),
     );
   }

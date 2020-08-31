@@ -1,6 +1,8 @@
-
-
 import 'package:flutter/material.dart';
+// import 'package:dio/dio.dart';
+import 'package:http/http.dart' as http;
+import 'dart:async';
+import 'dart:convert';
 
 class HomePage extends StatefulWidget {
   @override
@@ -9,52 +11,51 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   @override
-  Widget build(BuildContext context) {
+  void initState() {
+    super.initState();
+    getHttp().then((value) => print(value));
+  }
 
-    final List<BottomNavigationBarItem> _bottomNavigationBarItems = [
-      BottomNavigationBarItem(
-        icon: Icon(Icons.home),
-        title: Text('首页')
-      ),
-      BottomNavigationBarItem(
-        icon: Icon(Icons.view_quilt),
-        title: Text('分类')
-      ),
-      BottomNavigationBarItem(
-        icon: Icon(Icons.explore),
-        title: Text('发现')
-      ),
-      BottomNavigationBarItem(
-        icon: Icon(Icons.shopping_cart),
-        title: Text('购物车')
-      ),
-      BottomNavigationBarItem(
-        icon: Icon(Icons.person),
-        title: Text('我的')
-      ),
-    ];
-    int _currentIndex = 0;
-    final List<Widget>  _viewItems = [
-      Text('首页'),
-      Text('分类'),
-      Text('发现'),
-      Text('购物车'),
-      Text('我的'),
-    ];
-    return Scaffold(
-      bottomNavigationBar: BottomNavigationBar(
-        items: _bottomNavigationBarItems,
-        currentIndex: _currentIndex,
-        type: BottomNavigationBarType.fixed,
-        onTap: (int index) {
-          this.setState(() {
-            _currentIndex = index;
-          });
-        },
-      ),
-      body:Container(
-        
-      )
+  Future<List<Favor>> getHttp() async {
+    try {
+      http.Response response = await http.get('http://localhost:8000/test/getfavor');
+      if(response.statusCode == 200) {
+        final responseBody = jsonDecode(response.body);
+        List<Favor> favors = responseBody['favor']
+          .map<Favor>((item)=> Favor.fromJson(item))
+          .toList();
+
+        return favors;
+      } else {
+        throw Exception('Failed to fetch info');
+      }
+    }catch (e) {
+      throw Exception('Failed to fetch info: $e');
+    }
+  }
+
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      
     );
   }
+}
+
+
+class Favor{
+  final int id;
+  final int uid;
+  final int type;
+
+  Favor(
+    this.id,
+    this.uid,
+    this.type
+  );
+  Favor.fromJson(Map json) 
+    : id = json['id'], 
+      uid = json['uid'],
+      type = json['type'];
 }
