@@ -1,4 +1,4 @@
-# jd_app
+# shopping_mall_app
 
 A new Flutter project.
 
