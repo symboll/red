@@ -7,7 +7,7 @@ const reducer = (state = defaultState, action) => {
     case '':
       break;
 
-    default: console.log('xx')
+    default: 
   }
   return state
 }
