@@ -1,6 +1,8 @@
-const defaultState = {
+import { fromJS } from 'immutable'
+
+const defaultState =fromJS({
   name: 'zhangsan'
-}
+})
 
 const reducer = (state = defaultState, action) => {
   switch (action.type) {

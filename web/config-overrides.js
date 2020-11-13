@@ -1,4 +1,4 @@
-const { override, addWebpackModuleRule } = require('customize-cra') 
+const { override, addWebpackModuleRule, addWebpackAlias } = require('customize-cra') 
 const postcssNormalize = require('postcss-normalize')
 const getCSSModuleLocalIdent = require('react-dev-utils/getCSSModuleLocalIdent')
 const getPublicUrlOrPath = require('react-dev-utils/getPublicUrlOrPath')
@@ -86,6 +86,9 @@ const getStyleLoaders = (cssOptions, preProcessor) => {
 };
 
 module.exports = override(
+  addWebpackAlias({
+    "@": path.resolve(__dirname, "src")
+  }),
   addWebpackModuleRule({
     test: styluRegex,
     exclude: styluModuleRegex,

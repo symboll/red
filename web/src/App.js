@@ -8,8 +8,8 @@ import {
 } from 'react-router-dom'
 import store from './store'
 
-const Feature = lazy(()=> import('../src/pre_/features'))
-const Hook = lazy(()=> import('../src/pre_/hook'))
+// const Feature = lazy(()=> import('../src/pre_/features'))
+// const Hook = lazy(()=> import('../src/pre_/hook'))
 const Home = lazy(() => import('../src/pages/home'))
 const About = lazy(() => import('../src/pages/about'))
 
@@ -19,9 +19,9 @@ const App = () => {
       <Suspense fallback={<div>loading</div>}>
         <BrowserRouter>
           <Switch>
-            <Route path='/' exact component={Hook} />
-            <Route path='/feature'  component={Feature} />
-            <Route path='/home'  component={Home} />
+            {/* <Route path='/hook'  component={Hook} />
+            <Route path='/feature'  component={Feature} /> */}
+            <Route path='/'  exact component={Home} />
             <Route path='/about' component={About} />
           </Switch>
         </BrowserRouter>
