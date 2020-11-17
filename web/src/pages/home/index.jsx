@@ -1,23 +1,44 @@
-import React, { memo } from 'react';
+import React, { memo, useCallback } from 'react';
 import { connect } from 'react-redux';
 
 import { Journey, DateChoice, HighSpeed, Submit } from './components'
 import Header from '@/common/header'
 
+import { exchange } from './store/actionCreates'
+
 const mapStateToProps = (state, ownProps) => ({
-  name: state.getIn(['home', 'name'])  
+  to: state.getIn(['home', 'to']),
+  from: state.getIn(['home', 'from'])  
 })
 
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
-  
+  exchangeFromTo () {
+    dispatch(exchange())
+  }
 })
 
-const Home = ({ name }) => {
+
+
+const Home = ({ from ,to,  exchangeFromTo }) => {
+  const handleBack = useCallback(() => {
+    console.log(123)
+  }, []) 
+
+  // const exchangeFromTo = useCallback(() => {
+  //   console.log(345)
+  // }, [])
   return (
     <>
-      <Header />
-      <Journey />
+      <Header 
+        title={'火车票'}
+        onBack={ handleBack }
+      />
+      <Journey 
+        to={to}
+        from={from}
+        exchangeFromTo={ exchangeFromTo }
+      />
       <DateChoice />
       <HighSpeed />
       <Submit />
