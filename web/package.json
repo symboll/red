@@ -8,6 +8,7 @@
     "@testing-library/user-event": "^12.1.10",
     "classnames": "^2.2.6",
     "customize-cra": "^1.0.0",
+    "dayjs": "^1.9.6",
     "immutable": "^4.0.0-rc.12",
     "prop-types": "^15.7.2",
     "react": "^17.0.1",

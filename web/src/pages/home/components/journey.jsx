@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react'
+import { useState, useCallback, memo } from 'react'
 import classNames from 'classnames'
 import PropTypes from "prop-types"
 import switchImg from "./switch.svg"
@@ -49,4 +49,4 @@ Journey.propTypes = {
   to: PropTypes.string,
   from: PropTypes.string,
 }
-export default Journey
+export default memo(Journey)

@@ -1,33 +1,46 @@
 import React, { memo, useCallback } from 'react';
 import { connect } from 'react-redux';
 
-import { Journey, DateChoice, HighSpeed, Submit } from './components'
+import { Journey, DepartDate, HighSpeed, Submit } from './components'
 import Header from '@/common/header'
 
-import { exchange } from './store/actionCreates'
+import { exchange, speedtoggle } from './store/actionCreates'
 
 const mapStateToProps = (state, ownProps) => ({
   to: state.getIn(['home', 'to']),
-  from: state.getIn(['home', 'from'])  
+  from: state.getIn(['home', 'from']), 
+  departDate: state.getIn(['home', 'departDate']),
+  highSpeed: state.getIn(['home', 'highSpeed'])
 })
 
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
   exchangeFromTo () {
     dispatch(exchange())
+  },
+  highSpeedToggle() {
+    dispatch(speedtoggle())
   }
 })
 
 
 
-const Home = ({ from ,to,  exchangeFromTo }) => {
+const Home = (props) => {
+
+  const { from ,to, departDate, highSpeed } = props
+  const { exchangeFromTo } = props
+
   const handleBack = useCallback(() => {
     console.log(123)
   }, []) 
 
-  // const exchangeFromTo = useCallback(() => {
-  //   console.log(345)
-  // }, [])
+  const departDateChoose = useCallback(() => {
+    console.log(234)
+  }, [])
+
+  const highSpeedToggle = useCallback(() => {
+    props.highSpeedToggle()
+  }, [])
   return (
     <>
       <Header 
@@ -39,8 +52,14 @@ const Home = ({ from ,to,  exchangeFromTo }) => {
         from={from}
         exchangeFromTo={ exchangeFromTo }
       />
-      <DateChoice />
-      <HighSpeed />
+      <DepartDate 
+        departDate={departDate}
+        departDateChoose={departDateChoose}
+      />
+      <HighSpeed 
+        highSpeed={highSpeed}
+        toggle={highSpeedToggle}
+      />
       <Submit />
     </>
   )

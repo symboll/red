@@ -1,5 +1,6 @@
 
 import PropTypes from 'prop-types'
+import { memo } from 'react'
 import "./index.styl"
 
 const Header = ({ title, onBack }) => {
@@ -27,5 +28,5 @@ Header.propTypes = {
   onBack: PropTypes.func.isRequired
 }
 
-export default Header
+export default memo(Header)
 
