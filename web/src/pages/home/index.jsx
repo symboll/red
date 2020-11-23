@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { memo, useCallback } from 'react';
 import { connect } from 'react-redux';
 
@@ -28,11 +29,14 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
 const Home = (props) => {
 
   const { from ,to, departDate, highSpeed } = props
-  const { exchangeFromTo } = props
 
   const handleBack = useCallback(() => {
     console.log(123)
   }, []) 
+
+  const exchangeFromTo = useCallback(()=> {
+    props.exchangeFromTo()
+  }, [])
 
   const departDateChoose = useCallback(() => {
     console.log(234)

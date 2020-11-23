@@ -1,4 +1,4 @@
-import { useState, useCallback, memo } from 'react'
+import { useState, memo } from 'react'
 import classNames from 'classnames'
 import PropTypes from "prop-types"
 import switchImg from "./switch.svg"
@@ -8,11 +8,10 @@ import "./journey.styl"
 const Journey = ({ from, to, exchangeFromTo }) => {
   const [animation , setAnimation] =useState(false)
 
-  const handleExchangeFromTo = useCallback(
-    () => {
-      setAnimation((animation) => !animation)
-      exchangeFromTo()
-    },[])
+  const handleExchangeFromTo = () => {
+    setAnimation((animation) => !animation)
+    exchangeFromTo()
+  }
 
   return (
     <div className="journey">
@@ -25,10 +24,11 @@ const Journey = ({ from, to, exchangeFromTo }) => {
         />
       </div>
       <div 
-        className={classNames({
-          'journey-switch': true,
-          'journey-switch-reverse': animation
-        })} 
+        className={
+          classNames(
+          'journey-switch',
+          {'journey-switch-reverse': animation})
+        } 
         onClick={handleExchangeFromTo}
       >
         <img src={switchImg} alt="" width="70" height="40" />

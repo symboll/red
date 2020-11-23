@@ -1,7 +1,14 @@
-const Submit = () => {
-  return <div>
+import { memo } from 'react'
+import './submit.styl'
 
-  </div>
+const Submit = () => {
+  return (
+    <div className="submit">
+      <button type="submit" className="submit-button">
+        搜索
+      </button>
+    </div>
+  )
 }
 
-export default Submit
+export default memo(Submit)
