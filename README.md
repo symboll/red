@@ -1,4 +1,5 @@
-## tickets
-#### web => react 
+## hybird
+
 #### app => flutter
-#### server => nest
+#### native => react native
+#### uni => uni-app

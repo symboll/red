@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 class BottomNavigationBarDemo extends StatefulWidget {
   @override
   _BottomNavigationBarDemoState createState() => _BottomNavigationBarDemoState();
@@ -13,32 +12,31 @@ class _BottomNavigationBarDemoState extends State<BottomNavigationBarDemo> {
       _currentIndex = index;
     });
   }
-
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
+      type: BottomNavigationBarType.fixed,
+      fixedColor: Colors.black,     // 激活状态颜色
       currentIndex: _currentIndex,
       onTap: _onTapHandler,
-      type: BottomNavigationBarType.fixed,
-      fixedColor: Colors.black,
       items: [
         BottomNavigationBarItem(
-          icon:Icon(Icons.explore),
-          title: Text('Explore')
+            icon: Icon(Icons.explore),
+            label: 'Explore'
         ),
         BottomNavigationBarItem(
-          icon:Icon(Icons.history),
-          title: Text('History')
+            icon: Icon(Icons.history),
+            label: 'History'
         ),
         BottomNavigationBarItem(
-          icon:Icon(Icons.list),
-          title: Text('List')
+            icon: Icon(Icons.list),
+            label: 'List'
         ),
         BottomNavigationBarItem(
-          icon:Icon(Icons.person),
-          title: Text('My')
+            icon: Icon(Icons.person),
+            label: 'My'
         ),
-      ]
+      ],
     );
   }
 }
