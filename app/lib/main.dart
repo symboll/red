@@ -2,7 +2,11 @@ import 'package:flutter/material.dart';
 import 'demo/listview_demo.dart';
 import 'demo/drawer_demo.dart';
 import 'demo/bottomNavigationBar_demo.dart';
-
+import 'demo/basic_demo.dart';
+import 'demo/layout_demo.dart';
+import 'demo/view_demo.dart';
+import 'demo/sliver_demo.dart';
+import 'demo/navigator_demo.dart' as Nav;
 void main () => runApp(App());
 
 class App extends StatelessWidget {
@@ -10,7 +14,13 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Home(),
+      // home: Nav.NavigatorDemo(),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => Nav.NavigatorDemo(),
+        '/home': (context) => Home(),
+        '/about': (context) => Nav.Page(title: 'About')
+      },
       theme: ThemeData(
         primarySwatch: Colors.yellow,
         highlightColor: Color.fromRGBO(255, 255, 255, .5),
@@ -51,16 +61,17 @@ class Home extends StatelessWidget {
               Tab(icon: Icon(Icons.local_florist)),
               Tab(icon: Icon(Icons.change_history)),
               Tab(icon: Icon(Icons.directions_bike)),
-              Tab(icon: Icon(Icons.local_florist)),
+              Tab(icon: Icon(Icons.view_quilt))
             ],
           ),
         ),
         body: TabBarView(
           children: [
             ListViewDemo(),
-            Icon(Icons.change_history, size: 128.0, color:  Colors.black12,),
-            Icon(Icons.directions_bike, size: 128.0, color:  Colors.black12,),
-            Icon(Icons.local_florist, size: 128.0, color:  Colors.black12,),
+            BasicDemo(),
+            LayoutDemo(),
+            // ViewDemo(),
+            SliverDemo()
           ],
         ),
         drawer: DrawerDemo(),

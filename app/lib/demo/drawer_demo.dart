@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import '../model/post.dart';
 
-const  url = 'https://user-gold-cdn.xitu.io/2019/6/14/16b5625ed9a00576?imageView2/1/w/180/h/180/q/85/format/webp/interlace/1';
+
 class DrawerDemo extends StatelessWidget {
+  final String url = 'https://user-gold-cdn.xitu.io/2019/6/14/16b5625ed9a00576?imageView2/1/w/180/h/180/q/85/format/webp/interlace/1';
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -17,10 +18,10 @@ class DrawerDemo extends StatelessWidget {
           // ),
           UserAccountsDrawerHeader(
             accountName: Text(
-                'likanghua',
-                style: TextStyle(
-                    fontWeight: FontWeight.bold
-                )
+              'likanghua',
+              style: TextStyle(
+                fontWeight: FontWeight.bold
+              )
             ),
             accountEmail: Text('lkh19890913@163.com',),
             currentAccountPicture: CircleAvatar(
