@@ -7,6 +7,8 @@ import 'demo/layout_demo.dart';
 import 'demo/view_demo.dart';
 import 'demo/sliver_demo.dart';
 import 'demo/navigator_demo.dart' as Nav;
+import 'demo/forms/form_demo.dart';
+import 'demo/material_components.dart';
 void main () => runApp(App());
 
 class App extends StatelessWidget {
@@ -19,12 +21,15 @@ class App extends StatelessWidget {
       routes: {
         '/': (context) => Nav.NavigatorDemo(),
         '/home': (context) => Home(),
-        '/about': (context) => Nav.Page(title: 'About')
+        '/about': (context) => Nav.Page(title: 'About'),
+        '/form': (content)=> FormDemo(),
+        '/mdc': (content) => MaterialComponents() 
       },
       theme: ThemeData(
         primarySwatch: Colors.yellow,
         highlightColor: Color.fromRGBO(255, 255, 255, .5),
-        splashColor: Colors.white70
+        splashColor: Colors.white70,
+        accentColor: Color.fromRGBO(3, 54, 255, 1.0)
       ),
     );
   }
@@ -48,7 +53,9 @@ class Home extends StatelessWidget {
             IconButton(
               icon: Icon(Icons.search),
               tooltip: 'search',
-              onPressed: () => debugPrint('search'),
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
             )
           ],
           elevation: 4.0,
