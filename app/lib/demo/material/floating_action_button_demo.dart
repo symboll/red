@@ -25,6 +25,7 @@ class _FloatingActionButtonDemoState extends State<FloatingActionButtonDemo> {
     );
   }
 
+  // ignore: unused_field
   Widget _floatingActionButtonExtended = FloatingActionButton.extended(
     onPressed: () { }, 
     icon: Icon(Icons.add),

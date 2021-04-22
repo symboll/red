@@ -32,7 +32,8 @@ class NavigatorDemo extends StatelessWidget {
                 onPressed: () {
                   Navigator.pushNamed(context, '/form');
                 },
-                child: Text('Form'))
+                child: Text('Form')
+              )
             ],
           ),
           Row(
@@ -43,7 +44,7 @@ class NavigatorDemo extends StatelessWidget {
                   Navigator.pushNamed(context, '/mdc');
                 },
                 child: Text('mdc')
-              )
+              ),
             ],
           )
         ],

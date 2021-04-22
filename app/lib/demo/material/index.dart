@@ -1,14 +1,20 @@
+
 import 'package:flutter/material.dart';
-import 'material/button_demo.dart';
-import 'material/floating_action_button._demo.dart';
-import 'material/popup_menu_button_demo.dart';
+import 'button_demo.dart';
+import 'expansion_panel_demo.dart';
+import 'floating_action_button_demo.dart';
+import 'popup_menu_button_demo.dart';
+import 'simple_dialog_demo.dart';
+import 'alert_dialog_demo.dart';
+import 'bottom_sheet_demo.dart';
+import 'snack_bar_demo.dart';
 
 class MaterialComponents extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('mdc'),
+        title: Text('mdc'), 
       ),
       body: ListView(
         children: [
@@ -23,7 +29,27 @@ class MaterialComponents extends StatelessWidget {
           ListItem(
             title: 'PopupMenuButton',
             page: PopupMenuButtonDemo(),
-          )
+          ),
+          ListItem(
+            title: 'SimpleDialog',
+            page: SimpleDialogDemo(),
+          ),
+          ListItem(
+            title: 'AlertDialog',
+            page: AlertDialogDemo(),
+          ),
+          ListItem(
+            title: 'BottomSheetDemo',
+            page: BottomSheetDemo(),
+          ),
+          ListItem(
+            title: 'SnackBarDemo',
+            page: SnackBarDemo(),
+          ),
+          ListItem(
+            title: 'ExpansionPanelDemo',
+            page: ExpansionPanelDemo(),
+          ),
         ],
       ),
       floatingActionButton: FloatingActionButton(

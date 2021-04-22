@@ -4,11 +4,12 @@ import 'demo/drawer_demo.dart';
 import 'demo/bottomNavigationBar_demo.dart';
 import 'demo/basic_demo.dart';
 import 'demo/layout_demo.dart';
+// ignore: unused_import
 import 'demo/view_demo.dart';
 import 'demo/sliver_demo.dart';
 import 'demo/navigator_demo.dart' as Nav;
-import 'demo/forms/form_demo.dart';
-import 'demo/material_components.dart';
+import 'demo/form/index.dart';
+import 'demo/material/index.dart';
 void main () => runApp(App());
 
 class App extends StatelessWidget {
@@ -22,7 +23,7 @@ class App extends StatelessWidget {
         '/': (context) => Nav.NavigatorDemo(),
         '/home': (context) => Home(),
         '/about': (context) => Nav.Page(title: 'About'),
-        '/form': (content)=> FormDemo(),
+        '/form': (content)=> FormComponents(),
         '/mdc': (content) => MaterialComponents() 
       },
       theme: ThemeData(
