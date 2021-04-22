@@ -22,11 +22,11 @@ class _AlertDialogDemoState extends State<AlertDialogDemo> {
         title: Text('Alert Dialog'),
         content: Text('Are you sure about this?'),
         actions: [
-          FlatButton(
+          TextButton(
             child: Text('Cancel'),
-             onPressed: () { Navigator.pop(context, Options.Cancel); } 
+            onPressed: () { Navigator.pop(context, Options.Cancel); } 
           ),
-          FlatButton(
+          TextButton(
             child: Text('Ok'),
             onPressed: () { Navigator.pop(context, Options.Ok); } 
           ),
@@ -59,7 +59,7 @@ class _AlertDialogDemoState extends State<AlertDialogDemo> {
             children: [
               Text('your choice is $_choice'),
               SizedBox(height: 16.0,),
-              RaisedButton(
+              ElevatedButton(
                 child: Text('Open AlertDialog'),
                 onPressed: _openAlertDialog
               )

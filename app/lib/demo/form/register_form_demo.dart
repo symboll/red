@@ -41,8 +41,10 @@ class _RegisterFormState extends State<RegisterForm> {
     validatorValue = registerFormKey.currentState.validate();
     debugPrint('username: $username, password: $password, validatorValue: $validatorValue');
     if(validatorValue) {
-      Scaffold.of(context).showSnackBar(
-        SnackBar(content: Text('Register...'))
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: const Text('Register...'),
+        ),
       );
     }
   }
@@ -88,15 +90,21 @@ class _RegisterFormState extends State<RegisterForm> {
           SizedBox(height: 16.0,),
           Container(
             width: double.infinity,
-            child: RaisedButton(
+            child: ElevatedButton(
               onPressed: _submitRegisterForm,
-              color: Theme.of(context).accentColor,
+              // color: Theme.of(context).accentColor,
+              style: ButtonStyle(
+                backgroundColor: MaterialStateProperty.all(Theme.of(context).accentColor,)
+                // backgroundColor: MaterialStateProperty.resolveWith(
+                //   (states) => Theme.of(context).accentColor
+                // )
+              ),
               child: Text('Register',
                 style: TextStyle(
                   color: Colors.white
                 ),
               ),
-              elevation: 0.0,
+              // elevation: 0.0,
             ),
           )
         ],

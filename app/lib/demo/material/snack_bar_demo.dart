@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'dart:async';
 
 
  
@@ -38,12 +37,12 @@ class _SnackBarDemoState extends State<SnackBarDemo> {
 class SnackBarButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return FlatButton(
+    return TextButton(
       child: Text('Open SnackBar'),
       onPressed: () {
-        Scaffold.of(context).showSnackBar(
+        ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
-            content: Text('Processing...'),
+            content: const Text('Processing...'),
             action: SnackBarAction(
               label: 'Ok ', 
               onPressed: () {}

@@ -1,6 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'button_demo.dart';
+import 'chip_demo.dart';
 import 'expansion_panel_demo.dart';
 import 'floating_action_button_demo.dart';
 import 'popup_menu_button_demo.dart';
@@ -49,6 +50,10 @@ class MaterialComponents extends StatelessWidget {
           ListItem(
             title: 'ExpansionPanelDemo',
             page: ExpansionPanelDemo(),
+          ),
+          ListItem(
+            title: 'ChipDemo',
+            page: ChipDemo(),
           ),
         ],
       ),

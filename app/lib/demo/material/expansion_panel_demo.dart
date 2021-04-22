@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'dart:async';
  
 class ExpansionPanelItem{
   final String headerText;
@@ -20,11 +19,11 @@ class ExpansionPanelDemo extends StatefulWidget {
 
 class _ExpansionPanelDemoState extends State<ExpansionPanelDemo> {
   
-  List<ExpansionPanelItem> _expansionPanelList;
+  List<ExpansionPanelItem> _expansionPanelItems;
 
   void _handleExpansionChange (int panelIndex, bool isExpanded) {
     this.setState(() {
-      _expansionPanelList[panelIndex].isExpanded = ! isExpanded;
+      _expansionPanelItems[panelIndex].isExpanded = !isExpanded;
     });
   }
 
@@ -32,7 +31,7 @@ class _ExpansionPanelDemoState extends State<ExpansionPanelDemo> {
   void initState() {
     super.initState();
 
-    _expansionPanelList = [
+    _expansionPanelItems = <ExpansionPanelItem>[
       ExpansionPanelItem(
         headerText: 'Panel A',
         body: Container(
@@ -80,17 +79,7 @@ class _ExpansionPanelDemoState extends State<ExpansionPanelDemo> {
             children: [
               ExpansionPanelList(
                 expansionCallback: _handleExpansionChange,
-                // children: _expansionPanelItem.map((item) =>ExpansionPanel(
-                //   isExpanded: item.isExpanded,
-                //   headerBuilder: (BuildContext context, bool isExpanded) => Container(
-                //     padding: EdgeInsets.all(16.0),
-                //     child: Text('${item.headerText}', 
-                //       style: Theme.of(context).textTheme.headline5,
-                //     ),
-                //   ),
-                //   body: item.body
-                // )),
-                children: _expansionPanelList.map((item) =>  ExpansionPanel(
+                children: _expansionPanelItems.map((ExpansionPanelItem item) =>  ExpansionPanel(
                     isExpanded: item.isExpanded,
                     headerBuilder: (BuildContext context, bool isExpanded) => Container(
                       padding: EdgeInsets.all(16.0),
@@ -100,7 +89,7 @@ class _ExpansionPanelDemoState extends State<ExpansionPanelDemo> {
                     ),
                     body: item.body
                   )
-                ),
+                ).toList(),
               )
             ],
           ),

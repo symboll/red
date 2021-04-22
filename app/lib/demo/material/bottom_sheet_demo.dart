@@ -94,11 +94,11 @@ class _BottomSheetDemoState extends State<BottomSheetDemo> {
             children: [
               Text('your choice is $_choice'),
               SizedBox(height: 16.0,),
-              FlatButton(
+              TextButton(
                 child: Text('Open Bottom Sheet'),
                 onPressed: _handleOpenBottomSheet
               ),
-              FlatButton(
+              TextButton(
                 child: Text('Open Model Bottom Sheet'),
                 onPressed: _handleOpenModalBottomSheet
               )

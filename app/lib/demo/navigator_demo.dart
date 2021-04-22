@@ -2,6 +2,16 @@ import 'package:flutter/material.dart';
 
 class NavigatorDemo extends StatelessWidget {
 
+  final ButtonStyle _style = ButtonStyle(
+    // backgroundColor: MaterialStateProperty.all<Color>(Colors.white),
+    foregroundColor: MaterialStateProperty.all<Color>(Colors.black),
+    overlayColor: MaterialStateProperty.all<Color>(Colors.grey[400]),
+    textStyle: MaterialStateProperty.all<TextStyle>(TextStyle(
+      fontSize: 16.0,
+      // fontStyle: FontStyle.italic
+    ))
+  );
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -11,13 +21,14 @@ class NavigatorDemo extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              FlatButton(
+              TextButton(
                 onPressed: () {
                   Navigator.pushNamed(context, '/home');
                 }, 
+                style: _style,
                 child: Text('Home')
               ),
-              FlatButton(
+              TextButton(
                 onPressed: () {
                   // Navigator.of(context).push(
                   //   MaterialPageRoute(
@@ -26,12 +37,14 @@ class NavigatorDemo extends StatelessWidget {
                   // );
                   Navigator.pushNamed(context, '/about');
                 }, 
+                style: _style,
                 child: Text( 'About' )
               ),
-              FlatButton(
+              TextButton(
                 onPressed: () {
                   Navigator.pushNamed(context, '/form');
                 },
+                style: _style,
                 child: Text('Form')
               )
             ],
@@ -39,10 +52,11 @@ class NavigatorDemo extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              FlatButton(
+              TextButton(
                 onPressed: () {
                   Navigator.pushNamed(context, '/mdc');
                 },
+                style: _style,
                 child: Text('mdc')
               ),
             ],
