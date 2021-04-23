@@ -9,7 +9,10 @@ import 'simple_dialog_demo.dart';
 import 'alert_dialog_demo.dart';
 import 'bottom_sheet_demo.dart';
 import 'snack_bar_demo.dart';
-
+import 'data_table_demo.dart';
+import 'paginated_data_table_demo.dart';
+import 'card_demo.dart';
+import 'stepper_demo.dart';
 class MaterialComponents extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -19,6 +22,10 @@ class MaterialComponents extends StatelessWidget {
       ),
       body: ListView(
         children: [
+          ListItem(
+            title: 'Stepper',
+            page: StepperDemo(),
+          ),
           ListItem(
             title: 'FloatingActionButton',
             page: FloatingActionButtonDemo(),
@@ -54,6 +61,18 @@ class MaterialComponents extends StatelessWidget {
           ListItem(
             title: 'ChipDemo',
             page: ChipDemo(),
+          ),
+          ListItem(
+            title: 'DataTable',
+            page: DataTableDemo(),
+          ),
+          ListItem(
+            title: 'PaginatedDataTable',
+            page: PaginatedDataTableDemo(),
+          ),
+          ListItem(
+            title: 'Card',
+            page: CardDemo(),
           ),
         ],
       ),

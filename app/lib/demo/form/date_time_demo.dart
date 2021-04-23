@@ -49,8 +49,12 @@ class _DateTimeDemoState extends State<DateTimeDemo> {
         elevation: 0,
       ),
       body: Theme(
-        data: Theme.of(context).copyWith(
-          primaryColor: Colors.grey[600]
+        // data: Theme.of(context).copyWith(
+        //   primaryColor: Colors.grey[600]
+        // ),
+        data: ThemeData(
+          primaryColor: Colors.blue,
+          accentColor: Colors.green
         ),
         child: Container(
           padding: EdgeInsets.all(16.0),
