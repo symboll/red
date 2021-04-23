@@ -1,5 +1,7 @@
 
 import 'package:flutter/material.dart';
+import '../list_demo.dart';
+
 import 'button_demo.dart';
 import 'chip_demo.dart';
 import 'expansion_panel_demo.dart';
@@ -31,7 +33,7 @@ class MaterialComponents extends StatelessWidget {
             page: FloatingActionButtonDemo(),
           ),
           ListItem(
-            title: 'ButtonDemo',
+            title: 'Button',
             page: ButtonDemo(),
           ),
           ListItem(
@@ -47,19 +49,19 @@ class MaterialComponents extends StatelessWidget {
             page: AlertDialogDemo(),
           ),
           ListItem(
-            title: 'BottomSheetDemo',
+            title: 'BottomSheet',
             page: BottomSheetDemo(),
           ),
           ListItem(
-            title: 'SnackBarDemo',
+            title: 'SnackBar',
             page: SnackBarDemo(),
           ),
           ListItem(
-            title: 'ExpansionPanelDemo',
+            title: 'ExpansionPanel',
             page: ExpansionPanelDemo(),
           ),
           ListItem(
-            title: 'ChipDemo',
+            title: 'Chip',
             page: ChipDemo(),
           ),
           ListItem(
@@ -86,25 +88,3 @@ class MaterialComponents extends StatelessWidget {
   }
 }
 
-
-class ListItem extends StatelessWidget {
-  final String title;
-  final Widget page;
-
-  ListItem({
-    this.title,
-    this.page
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return ListTile(
-      title: Text(title),
-      onTap: () {
-        Navigator.of(context).push(
-          MaterialPageRoute(builder: (context) => page)
-        );
-      },
-    );
-  }
-}

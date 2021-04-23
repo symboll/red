@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import '../material/index.dart' show ListItem;
+import '../list_demo.dart';
+
 import './register_form_demo.dart';
 import './checkbox_demo.dart';
 import './radio_demo.dart';
@@ -17,7 +18,7 @@ class FormComponents extends StatelessWidget {
       body: ListView(
         children: [
           ListItem(
-            title: 'RegisterDemo',
+            title: 'Register',
             page: RegisterFormDemo(),
           ),
           ListItem(

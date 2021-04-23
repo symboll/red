@@ -59,6 +59,13 @@ class NavigatorDemo extends StatelessWidget {
                 style: _style,
                 child: Text('mdc')
               ),
+              TextButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, '/state');
+                },
+                style: _style,
+                child: Text('state')
+              ),
             ],
           )
         ],

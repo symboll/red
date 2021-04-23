@@ -10,6 +10,7 @@ import 'demo/sliver_demo.dart';
 import 'demo/navigator_demo.dart' as Nav;
 import 'demo/form/index.dart';
 import 'demo/material/index.dart';
+import 'demo/state/index.dart';
 void main () => runApp(App());
 
 class App extends StatelessWidget {
@@ -23,8 +24,9 @@ class App extends StatelessWidget {
         '/': (context) => Nav.NavigatorDemo(),
         '/home': (context) => Home(),
         '/about': (context) => Nav.Page(title: 'About'),
-        '/form': (content)=> FormComponents(),
-        '/mdc': (content) => MaterialComponents() 
+        '/form': (context)=> FormComponents(),
+        '/mdc': (context) => MaterialComponents(),
+        '/state': (context) => StateComponents()
       },
       theme: ThemeData(
         primarySwatch: Colors.yellow,
