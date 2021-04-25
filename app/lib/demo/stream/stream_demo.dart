@@ -2,16 +2,16 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
 
-class StreamHomeDemo extends StatefulWidget {
+class StreamDemo extends StatefulWidget {
   @override
-  _StreamHomeDemoState createState() => _StreamHomeDemoState();
+  _StreamDemoState createState() => _StreamDemoState();
 }
 
-class _StreamHomeDemoState extends State<StreamHomeDemo> {
+class _StreamDemoState extends State<StreamDemo> {
   StreamSubscription _streamSubscription;
   StreamController<String> _streamController;
   StreamSink _streamSink;
-  String _data = '...';
+  // String _data = '...';
 
   ButtonStyle _style = ButtonStyle(
     backgroundColor: MaterialStateProperty.all<Color>(Colors.transparent),
@@ -51,9 +51,9 @@ class _StreamHomeDemoState extends State<StreamHomeDemo> {
 
   void onData(String data) {
     print('event: $data');
-    this.setState(() {
-      _data = data;
-    });
+    // this.setState(() {
+    //   _data = data;
+    // });
   }
 
   void onError (error) {
@@ -93,7 +93,7 @@ class _StreamHomeDemoState extends State<StreamHomeDemo> {
   Widget build(BuildContext context) {
     return  Scaffold(
       appBar: AppBar(
-        title: Text('StreamHome'),
+        title: Text('Stream'),
         elevation: 0.0,
       ),
       body: Container(

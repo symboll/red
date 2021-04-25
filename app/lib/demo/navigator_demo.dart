@@ -15,68 +15,72 @@ class NavigatorDemo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              TextButton(
-                onPressed: () {
-                  Navigator.pushNamed(context, '/home');
-                }, 
-                style: _style,
-                child: Text('Home')
+      body: Container(
+        padding: EdgeInsets.all(16.0),
+        child: SafeArea(
+          child: SingleChildScrollView(
+            child: Theme(
+              data: ThemeData(
+                textButtonTheme: TextButtonThemeData(
+                  style: _style
+                )
               ),
-              TextButton(
-                onPressed: () {
-                  // Navigator.of(context).push(
-                  //   MaterialPageRoute(
-                  //     builder: (BuildContext context) => Page(title: 'About')
-                  //   )
-                  // );
-                  Navigator.pushNamed(context, '/about');
-                }, 
-                style: _style,
-                child: Text( 'About' )
-              ),
-              TextButton(
-                onPressed: () {
-                  Navigator.pushNamed(context, '/form');
-                },
-                style: _style,
-                child: Text('Form')
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  TextButton(
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/home');
+                    }, 
+                    child: Text('Home')
+                  ),
+                  TextButton(
+                    onPressed: () {
+                      // Navigator.of(context).push(
+                      //   MaterialPageRoute(
+                      //     builder: (BuildContext context) => Page(title: 'About')
+                      //   )
+                      // );
+                      Navigator.pushNamed(context, '/about');
+                    }, 
+                    child: Text( 'About' )
+                  ),
+                  TextButton(
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/form');
+                    },
+                    child: Text('Form')
+                  ),
+                  TextButton(
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/mdc');
+                    },
+                    child: Text('mdc')
+                  ),
+                  TextButton(
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/state');
+                    },
+                    child: Text('state')
+                  ),
+                  TextButton(
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/stream');
+                    },
+                    child: Text('Stream')
+                  ),
+                  TextButton(
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/rxdart');
+                    },
+                    child: Text('Rxdart')
+                  ),              
+                ],
               )
-            ],
+            ),          
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              TextButton(
-                onPressed: () {
-                  Navigator.pushNamed(context, '/mdc');
-                },
-                style: _style,
-                child: Text('mdc')
-              ),
-              TextButton(
-                onPressed: () {
-                  Navigator.pushNamed(context, '/state');
-                },
-                style: _style,
-                child: Text('state')
-              ),
-              TextButton(
-                onPressed: () {
-                  Navigator.pushNamed(context, '/stream');
-                },
-                style: _style,
-                child: Text('Stream')
-              ),
-            ],
-          )
-        ],
-      ), 
+        ) 
+      ),
     );
   }
 }

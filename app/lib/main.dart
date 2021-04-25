@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 import 'demo/listview_demo.dart';
 import 'demo/drawer_demo.dart';
@@ -11,7 +12,8 @@ import 'demo/navigator_demo.dart' as Nav;
 import 'demo/form/index.dart';
 import 'demo/material/index.dart';
 import 'demo/state/index.dart';
-import 'demo/stream/index.dart';
+import 'demo/stream/stream_demo.dart';
+import 'demo/rxdart/rxdart_demo.dart';
 void main () => runApp(App());
 
 class App extends StatelessWidget {
@@ -28,7 +30,8 @@ class App extends StatelessWidget {
         '/form': (context)=> FormComponents(),
         '/mdc': (context) => MaterialComponents(),
         '/state': (context) => StateComponents(),
-        '/stream': (context) => StreamDemo()
+        '/stream': (context) => StreamDemo(),
+        '/rxdart': (context) => RxdartDemo()
       },
       theme: ThemeData(
         primarySwatch: Colors.yellow,
