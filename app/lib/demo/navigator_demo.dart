@@ -66,6 +66,13 @@ class NavigatorDemo extends StatelessWidget {
                 style: _style,
                 child: Text('state')
               ),
+              TextButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, '/stream');
+                },
+                style: _style,
+                child: Text('Stream')
+              ),
             ],
           )
         ],

@@ -7,7 +7,6 @@ class CounterModel extends  Model {
   int get count => _count;
   
   void increaseCount () {
-    debugPrint('count: $_count');
     _count += 1;
 
     notifyListeners();

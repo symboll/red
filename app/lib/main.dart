@@ -11,6 +11,7 @@ import 'demo/navigator_demo.dart' as Nav;
 import 'demo/form/index.dart';
 import 'demo/material/index.dart';
 import 'demo/state/index.dart';
+import 'demo/stream/index.dart';
 void main () => runApp(App());
 
 class App extends StatelessWidget {
@@ -26,7 +27,8 @@ class App extends StatelessWidget {
         '/about': (context) => Nav.Page(title: 'About'),
         '/form': (context)=> FormComponents(),
         '/mdc': (context) => MaterialComponents(),
-        '/state': (context) => StateComponents()
+        '/state': (context) => StateComponents(),
+        '/stream': (context) => StreamDemo()
       },
       theme: ThemeData(
         primarySwatch: Colors.yellow,
