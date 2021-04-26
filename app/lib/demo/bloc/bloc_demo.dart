@@ -28,26 +28,21 @@ class CounterHome extends StatelessWidget {
   Widget build(BuildContext context) {
     CounterBloc _counterBloc = CounterProvider.of(context).bloc;
 
-    // return Center(
-    //   child: ActionChip(
-    //     label: Text('0'), 
-    //     onPressed: () => _counterBloc.counter.add(1),
-    //   ),
-    // );
-    return StreamBuilder(
-      initialData: 0,
-      stream: _counterBloc.count,
-      builder: (BuildContext context, AsyncSnashot snapshot) {
-        return  ActionChip(
-          label: Text('${snapshot.data}'), 
-          // onPressed: () => _counterBloc.counter.add(1),
-          onPressed: () {
-            _counterBloc.counter.add(1);
-          },
-        );
-      },
+    return Center(
+      child: StreamBuilder(
+        initialData: 0,
+        stream: _counterBloc.count,
+        builder: (BuildContext context, snapshot) {
+          return  ActionChip(
+            label: Text('${snapshot.data}'), 
+            // onPressed: () => _counterBloc.counter.add(1),
+            onPressed: () {
+              _counterBloc.counter.add(1);
+            },
+          );
+        },
+      ),
     );
-    
   }
 }
 
@@ -68,10 +63,10 @@ class CounterActionButton extends StatelessWidget {
 
 class CounterBloc {
   int _count = 0;
-  final StreamController _streamController = StreamController<int>();
+  final  _streamController = StreamController<int>();
   StreamSink<int> get counter => _streamController.sink;
 
-  final StreamController _countContrller = StreamController<int>();
+  final  _countContrller = StreamController<int>();
   Stream<int> get count => _countContrller.stream;
 
   CounterBloc() {

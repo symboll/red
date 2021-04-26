@@ -15,6 +15,8 @@ import 'demo/state/index.dart';
 import 'demo/stream/stream_demo.dart';
 import 'demo/rxdart/rxdart_demo.dart';
 import 'demo/bloc/bloc_demo.dart';
+import 'demo/http/http_demo.dart';
+import 'demo/animation/animation_demo.dart';
 void main () => runApp(App());
 
 class App extends StatelessWidget {
@@ -33,7 +35,9 @@ class App extends StatelessWidget {
         '/state': (context) => StateComponents(),
         '/stream': (context) => StreamDemo(),
         '/rxdart': (context) => RxdartDemo(),
-        '/bloc': (context) => BlocDemo()
+        '/bloc': (context) => BlocDemo(),
+        '/http': (context) => HttpDemo(),
+        '/animation': (context) => AnimationDemo()
       },
       theme: ThemeData(
         primarySwatch: Colors.yellow,

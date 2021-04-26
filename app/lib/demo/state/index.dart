@@ -5,7 +5,6 @@ import '../list_demo.dart';
 import 'state_management.dart';
 import 'inherited_demo.dart';
 import 'scoped_model_demo.dart';
-
 class StateComponents extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -23,7 +22,7 @@ class StateComponents extends StatelessWidget {
             title: 'Inherited',
             page: InheritedDemo(),
           ),
-           ListItem(
+          ListItem(
             title: 'ScopedModel',
             page: ScopedModelDemo(),
           ),

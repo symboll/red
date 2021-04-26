@@ -9,7 +9,8 @@ class NavigatorDemo extends StatelessWidget {
     textStyle: MaterialStateProperty.all<TextStyle>(TextStyle(
       fontSize: 16.0,
       // fontStyle: FontStyle.italic
-    ))
+    )),
+    minimumSize: MaterialStateProperty.all<Size>(Size(double.infinity, 48.0))
   );
 
   @override
@@ -80,6 +81,18 @@ class NavigatorDemo extends StatelessWidget {
                       Navigator.pushNamed(context, '/bloc');
                     },
                     child: Text('Bloc')
+                  ), 
+                  TextButton(
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/http');
+                    },
+                    child: Text('Http')
+                  ), 
+                  TextButton(
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/animation');
+                    },
+                    child: Text('Animation')
                   ),              
                 ],
               )
