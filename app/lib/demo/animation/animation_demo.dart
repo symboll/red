@@ -26,9 +26,7 @@ class _AnimationHomeDemoState extends State<AnimationHomeDemo>
   Animation _animation;
   Animation _animationColor;
 
-  /**
-   * 非线性动画
-   */
+  /// 非线性动画
   CurvedAnimation _curvedAnimation;
 
   @override

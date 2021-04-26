@@ -1,5 +1,6 @@
-
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+
 import 'demo/listview_demo.dart';
 import 'demo/drawer_demo.dart';
 import 'demo/bottomNavigationBar_demo.dart';
@@ -17,12 +18,25 @@ import 'demo/rxdart/rxdart_demo.dart';
 import 'demo/bloc/bloc_demo.dart';
 import 'demo/http/http_demo.dart';
 import 'demo/animation/animation_demo.dart';
+import 'demo/i18n/i18n_demo.dart';
 void main () => runApp(App());
 
 class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      // localeListResolutionCallback: (List<Locale> locale, Iterable<Locale> supportedLocales) {
+      //   return Locale('zh', 'CN');
+      // },
+      // locale: Locale('en', 'US'),
+      localizationsDelegates: [
+        GlobalMaterialLocalizations.delegate,    
+        GlobalWidgetsLocalizations.delegate
+      ],
+      supportedLocales: [
+        Locale('en', 'US'),
+        Locale('zh', 'CN')
+      ],
       debugShowCheckedModeBanner: false,
       // home: Nav.NavigatorDemo(),
       initialRoute: '/',
@@ -37,7 +51,8 @@ class App extends StatelessWidget {
         '/rxdart': (context) => RxdartDemo(),
         '/bloc': (context) => BlocDemo(),
         '/http': (context) => HttpDemo(),
-        '/animation': (context) => AnimationDemo()
+        '/animation': (context) => AnimationDemo(),
+        '/i18n': (context) => I18nDemo()
       },
       theme: ThemeData(
         primarySwatch: Colors.yellow,

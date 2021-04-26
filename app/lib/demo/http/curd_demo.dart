@@ -4,7 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as Http;
 import 'dart:async';
 
-final String basic_url =  'http://localhost:3000';
+
+final String basicUrl =  'http://localhost:3000';
 
 class CurdDemo extends StatefulWidget {
   @override
@@ -15,7 +16,7 @@ class _CurdDemoState extends State<CurdDemo> {
  
 
   Future<List<Post>> _getPosts () async {
-    final response = await Http.get(Uri.parse('$basic_url/posts'));
+    final response = await Http.get(Uri.parse('$basicUrl/posts'));
     if(response.statusCode == 200) {
       final responseBody = jsonDecode(response.body);
       List<Post> posts = responseBody.map<Post>((item) => Post.fromJson(item)).toList();
@@ -26,7 +27,7 @@ class _CurdDemoState extends State<CurdDemo> {
   }
 
   void _createPost() async {
-    final response = await Http.post(Uri.parse('$basic_url/posts'), body: {
+    final response = await Http.post(Uri.parse('$basicUrl/posts'), body: {
       'title': "abc",
       'content': "德莱文"
     });
